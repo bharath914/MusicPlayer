@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/background"
+    >
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/RecyclerView_Home"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:background="@drawable/miniplayerbackground"
+      android:id="@+id/MiniPlayerCo"
+
+      >
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintHorizontal_weight="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/MiniSongName"
+        android:id="@+id/MiniARTHOlder"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="20dp"
+        >
+      <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:src="@drawable/baseline_music_note_24"
+          android:id="@+id/MiniAlbumArt"
+          android:scaleType="fitXY"
+          />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/MiniSongName"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintHorizontal_weight="0.6"
+        app:layout_constraintStart_toEndOf="@id/MiniARTHOlder"
+        android:textColor="@color/textColor"
+        android:text="@string/sample_song_name"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:ellipsize="marquee"
+        android:fontFamily="@font/roboto_medium"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+  android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@id/MiniPlayBtn"/>
+    <ImageView
+        android:id="@+id/MiniPlayBtn"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/MiniSongName"
+        app:layout_constraintHorizontal_weight="0.2"
+        android:src="@drawable/baseline_pause_24"
+        android:scaleType="centerInside"
+        />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+<include layout="@layout/playingview" android:visibility="gone"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

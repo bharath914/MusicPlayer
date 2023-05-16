@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="albumart">AlbumArt</string>
+    <string name="sample_song_name">Sample Song Name</string>
+    <string name="artist_name">Artist Name</string>
+</resources>
